@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace CodingDojo.Lib
 {
@@ -6,12 +8,24 @@ namespace CodingDojo.Lib
     {
         public bool IsPrime(int number)
         {
-            throw new NotImplementedException();
+            for (int i = 2; i <= Math.Sqrt(number); i++)
+            {
+                if (number % i == 0) return false;
+            }
+            return number > 1;
         }
-        
+
         public int GetPrime(int index)
         {
-            throw new NotImplementedException();
+            var count = 0;
+            for (int i = 2; ; i++)
+            {
+                if (IsPrime(i))
+                {
+                    count++;
+                    if (count == index) return i;
+                }
+            }
         }
     }
 

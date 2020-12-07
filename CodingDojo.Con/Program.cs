@@ -1,4 +1,5 @@
 ﻿using System;
+using CodingDojo.Lib;
 
 namespace CodingDojo.Con
 {
@@ -6,7 +7,8 @@ namespace CodingDojo.Con
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var func = new PrimeHelper();
+            System.Console.WriteLine(func.GetPrime(10001));
         }
     }
 }
