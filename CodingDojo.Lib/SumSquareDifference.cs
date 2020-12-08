@@ -1,21 +1,26 @@
+using System;
+using System.Linq;
+
 namespace CodingDojo.Lib
 {
     public class SumSquareDifference : ISumSquareDifference
     {
-        public int SquaresOfSum(int number)
+        public double SquaresOfSum(int number)
         {
-            throw new System.NotImplementedException();
+            var sum = Enumerable.Range(1, number).Sum(it => Math.Pow(it, 2));
+            return sum;
         }
 
-        public int SumOfSquares(int number)
+        public double SumOfSquares(int number)
         {
-            throw new System.NotImplementedException();
+            var sum = Math.Pow(Enumerable.Range(1, number).Sum(it => it), 2);
+            return sum;
         }
     }
 
     interface ISumSquareDifference
     {
-        int SumOfSquares(int number);
-        int SquaresOfSum(int number);
+        double SumOfSquares(int number);
+        double SquaresOfSum(int number);
     }
 }
