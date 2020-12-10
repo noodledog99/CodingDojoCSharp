@@ -1,21 +1,25 @@
+using System;
+using System.Linq;
+using System.Numerics;
+
 namespace CodingDojo.Lib
 {
     public class PowerDigitSum : IPowerDigitSum
     {
-        public double PowerNumber(int number)
+        public BigInteger PowerNumber(int number)
         {
-            throw new System.NotImplementedException();
+            return BigInteger.Pow(2, number);
         }
 
-        public int SumOfDigit(double number)
+        public int SumOfDigit(BigInteger number)
         {
-            throw new System.NotImplementedException();
+            return number.ToString().Select(c => int.Parse(c.ToString())).Sum();
         }
     }
 
     public interface IPowerDigitSum
     {
-        double PowerNumber(int number);
-        int SumOfDigit(double number);
+        BigInteger PowerNumber(int number);
+        int SumOfDigit(BigInteger number);
     }
 }
